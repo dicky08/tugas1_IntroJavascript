@@ -1,39 +1,37 @@
 // // Membuat Rata-Rata Nilai UN
 
 function nilai(mtk, bhsIndo, bhsIngg, ipa) {
-    return [
-        mtk,
-        bhsIndo,
-        bhsIngg,
-        ipa
-    ]
-}
-let nilaiUN = nilai(100, 90, 50, 40);
-let nilaiAwal = 0;
-let pjgArray = nilaiUN.length;
-for (let i = 0; i < nilaiUN.length; i++) {
-    if (nilaiUN[i] === undefined) {
-        console.log('Tidak boleh ada yang kosong');
-        return false;
-    }
-    if (typeof nilaiUN[i] !== 'number') {
 
-        console.log('Yang diinputkan bukan number');
-        return false;
+    let nilaiUn = [mtk, bhsIndo, bhsIngg, ipa];
+    let panjangArray = nilaiUn.length;
+    let nilaiAwal = 0;
+    for (let i = 0; i < nilaiUn.length; i++) {
+        if (typeof nilaiUn[i] === 'undefined') {
+            return 'Inputan tidak boleh kosong';
+        } else if (typeof nilaiUn[i] !== 'number') {
+            return 'Yang diinputkan bukan angka';
+        } else {
+            nilaiAwal += nilaiUn[i] / panjangArray;
+        }
+    }
+    let result = nilaiAwal;
+    if ((result >= 90) && (result <= 100)) {
+        return (`Rata-rata = ${result}
+Grade = A`);
+    } else if ((result >= 80) && result <= 89) {
+        return (`Rata-rata = ${result}
+Grade = B`);
+    } else if ((result >= 70) && result <= 79) {
+        return (`Rata-rata = ${result}
+Grade = E`);
+    } else if ((result >= 60) && result <= 69) {
+        return (`Rata-rata = ${result}
+Grade = E`);
     } else {
-        nilaiAwal += nilaiUN[i] / pjgArray;
+        return (`Rata-rata = ${result}
+Grade = E`);
     }
 }
-console.log(`Rata-rata = ${nilaiAwal}`);
-let result = nilaiAwal;
-if ((result >= 90) && (result <= 100)) {
-    console.log('Grade = A');
-} else if ((result >= 80) && result <= 89) {
-    console.log('Grade = B');
-} else if ((result >= 70) && result <= 79) {
-    console.log('Grade = C');
-} else if ((result >= 60) && result <= 69) {
-    console.log('Grade = D');
-} else {
-    console.log('Grade = E');
-}
+let diki = nilai(80, 90, 70, 100);
+let budi = nilai(100, 90, 20, 80);
+console.log(budi);
