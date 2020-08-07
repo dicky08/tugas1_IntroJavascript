@@ -3,7 +3,7 @@
      // Jika bukan keluarkan output yang diinputkan bukan angka
      function printSegitiga(angka) {
          if (typeof angka !== 'number') {
-             console.log('Yang di inputkan bukan angka:');
+             console.log('Data harus number');
          }
          let kosong = '';
          for (let i = angka; i >= 0; i--) {
@@ -15,4 +15,4 @@
          return kosong;
      }
 
-     console.log(printSegitiga('a'));
+     console.log(printSegitiga(6));
